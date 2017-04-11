@@ -4,7 +4,7 @@ export default class StatusUpdateEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
+      value: " "
     };
   }
 
@@ -20,8 +20,8 @@ export default class StatusUpdateEntry extends React.Component {
     var statusUpdateText = this.state.value.trim();
     if (statusUpdateText !== "") {
       /* TODO: How do we send the post to the server + update the Feed? */
-      // Reset status update.
-      this.setState({value: ""});
+      this.props.onPost(statusUpdateText);
+      this.setState({value: " "});
     }
   }
 
